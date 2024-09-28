@@ -1,16 +1,16 @@
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9 
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5 * 32
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 
 temperature = float(input("Enter the temperature: "))
 
 tempKind = input("Is this temperature in Celsius or Fahrenheit? (C/F):").upper()
 
 def convert_to_celsius(fahrenheit):
-        fahrenheit = temperature * FAHRENHEIT_TO_CELSIUS_FACTOR
+        fahrenheit = temperature * FAHRENHEIT_TO_CELSIUS_FACTOR + 32
         print(temperature,"°C is",fahrenheit)
 
 def convert_to_fahrenheit(celsius):
-        celsius = temperature * CELSIUS_TO_FAHRENHEIT_FACTOR
+        celsius = temperature * CELSIUS_TO_FAHRENHEIT_FACTOR + 32
         print(temperature,"°F is",celsius)
 
 if tempKind == "C":
