@@ -20,20 +20,24 @@ class Library:
     def add_book(self,book):
         self._books.append(book)
 
-    def return_book(self,title):
-        for book in self._books:
-            if book.title == title:
-                self._books.remove(book)
-
     def check_out_book(self,title):
         for book in self._books:
-            if book.title == title:
-                book._is_checked_out = True
-                return f"{title} is found"
+            if book.title == title and book.is_available():
+                book.check_out()
+                print(f"{title} is found")
             else:
-                return f"{title} is not found"
+                print(f"{title} is not found")
+        return
+            
+    def return_book(self,title):
+        for book in self._books:
+            if book.title == title and not book.is_available():
+                book.return_book()
+        return
+
     def list_available_books(self):
         for book in self._books:
+            if book.is_available():
              print(f"{book.title} by {book.author}")
 
 
