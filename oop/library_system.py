@@ -5,11 +5,11 @@ class Book:
     def __str__(self):
         return f"Book: {self.title} by {self.author}"
 class EBook(Book):
-    def __init__(self, title, author, file_format):
+    def __init__(self, title, author, file_size):
         super().__init__(title, author)
-        self.file_format = file_format
+        self.file_size = file_size
     def __str__(self):
-        return super().__str__() + f", File format: {self.file_format}"
+        return super().__str__() + f", File format: {self.file_size}"
 
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
